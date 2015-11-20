@@ -1,0 +1,7 @@
+Le développeur cherche à produire du code modulaire/réutilisable. C'est ce qu'il réalise lorsqu'il écrit une librairie d'utilitaires ou même simple fonction commune.
+Si la diffusion de jar ou de DLL est chose commune, il est moins évident pour le développeur HTML/JS de reproduire son travail sans passer par une duplication de code.
+
+C'est ici qu'interviennent les Web Components. L'objectif de celles est de produire un "élément" HTML, avec son propre contenu, son propre style. Le tout facilement réutilisable d'un site à l'autre.
+
+Nous profiterons donc de cette présentation pour présenter les différents concepts derrière le "Buzzword". Nous évoquerons la compatibilité avec les navigateurs actuels.
+Puis nous terminerons en regardant ce que proposent les grands du web (Google en tête) autour de cette technologie prometteuse.
