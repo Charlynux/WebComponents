@@ -3,28 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <title>Custom Element</title>
-
 </head>
 <body>
 
     <x-foo></x-foo>
 
     <script>
-    var XFooPrototype = Object.create(HTMLElement.prototype);
-    XFooPrototype.createdCallback = function() {
-      this.textContent = "I'm an x-foo !";
-    };
+        var XFooPrototype = Object.create(HTMLElement.prototype);
+        XFooPrototype.createdCallback = function() {
+          this.textContent = "I'm an x-foo !";
+        };
 
-    XFooPrototype.foo = function() {
-      console.log('hello, world');
-    };
+        XFooPrototype.foo = function() {
+          console.log('hello, world');
+          this.style.color = "red";
+        };
 
-    var XFoo = document.registerElement('x-foo', {
-      prototype: XFooPrototype
-    });
-
-    document.body.appendChild(new XFoo());
-
+        var XFoo = document.registerElement('x-foo', {
+          prototype: XFooPrototype
+        });
     </script>
 </body>
 </html>
