@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Template</title>
+  <style>
+    img {
+      height : 150px;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <button onclick="useTemplate()">Add template</button>
+  </div>
+
+  <template id="my-template">
+      <img src="" alt="some image">
+  </template>
+
+  <script type="text/javascript">
+      var count = 0;
+      function useTemplate() {
+        var template = document.querySelector("#my-template").content;
+        var clone = document.importNode(template, true);
+
+        clone.querySelector("img").src = "datas/panda-" + count % 2 + ".png";
+        document.body.appendChild(clone);
+
+        count++;
+      }
+  </script>
+</body>
+</html>
