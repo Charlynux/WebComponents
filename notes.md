@@ -9,7 +9,7 @@ Custom Elements
 	<my-message></my-message>
 
 HTML Templates
-	????
+	Code HTML réutilisable
 
 HTML Imports
 	<link ...html>
@@ -28,4 +28,3 @@ Questions persos
 	Attributes
 	Communication inter-components
 	Démo Web-Workers ?
-

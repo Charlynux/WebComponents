@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Shadow DOM</title>
+  <style>
+    h1 {
+      color : red;
+    }
+  </style>
+</head>
+<body>
+  <h1>Ici, c'est rouge !</h1>
+  <div id="root"></div>
+  <h1>Ici, aussi c'est rouge !</h1>
+
+  <script>
+    document.querySelector('#root')
+              .createShadowRoot()
+                .innerHTML = "<style>h1 { color : green; }</style><h1>Ici, c'est vert !</h1>";
+  </script>
+</body>
+</html>
