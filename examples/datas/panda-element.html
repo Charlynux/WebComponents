@@ -1,0 +1,78 @@
+<html>
+  <template>
+    <style>
+      .panda {
+        height: 120px;
+
+        border: 1px solid black;
+        border-radius: 5px;
+        background-color : lightblue;
+      }
+
+      .picture {
+        display : inline-block;
+        float: left;
+
+        max-height : 100px;
+        margin : 10px;
+      }
+
+      .name {
+        font-size: 40px;
+      }
+
+      .weight {
+        font-size: 24px;
+      }
+    </style>
+    <div class="panda">
+      <img class="picture"></img>
+      <div class="name"></div>
+      <div class="weight"></div>
+    </div>
+  </template>
+  <script>
+  (function() {
+    var pandaService = {
+      pandas : {
+        '0' : { name : 'panda-0', weight : '90kg'},
+        '1' : { name : 'panda-1', weight : '110kg' }
+      },
+      find : function(id) {
+        return this.pandas[id];
+      }
+    };
+
+
+    var importDoc = document.currentScript.ownerDocument;
+    var template = importDoc.getElementsByTagName('template')[0].content;
+
+    var pandaPrototype = Object.create(HTMLElement.prototype);
+    pandaPrototype.createdCallback = function () {
+      var pandaId = this.getAttribute('panda-id');
+      var clone = document.importNode(template, true);
+
+      var pandaElement = clone.querySelector('.panda');
+      this.addEventListener('click', function() {
+        var currentColor = pandaElement.style.backgroundColor;
+        var newColor = '';
+        if (currentColor === 'yellow') {
+          newColor = 'lightblue';
+        } else {
+          newColor = 'yellow';
+        }
+
+        pandaElement.style.backgroundColor = newColor;
+      });
+
+      var panda = pandaService.find(pandaId);
+      clone.querySelector('.picture').src = 'datas/' + panda.name + '.png';
+      clone.querySelector('.name').innerHTML = panda.name;
+      clone.querySelector('.weight').innerHTML = panda.weight;
+      this.createShadowRoot().appendChild(clone);
+    };
+
+    document.registerElement('panda-element', { prototype : pandaPrototype });
+  })();
+  </script>
+</html>
