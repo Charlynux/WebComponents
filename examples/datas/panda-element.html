@@ -33,6 +33,10 @@
   </template>
   <script>
   (function() {
+
+    /*
+     * Repository containing panda datas.
+     */
     var pandaService = {
       pandas : {
         '0' : { name : 'panda-0', weight : '90kg'},
@@ -42,7 +46,6 @@
         return this.pandas[id];
       }
     };
-
 
     var importDoc = document.currentScript.ownerDocument;
     var template = importDoc.getElementsByTagName('template')[0].content;
