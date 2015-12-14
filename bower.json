@@ -1,0 +1,24 @@
+{
+  "name": "WebComponents",
+  "version": "0.0.0",
+  "homepage": "https://github.com/Charlynux/WebComponents",
+  "authors": [
+    "Charles Fourdrignier <charles.fourdrignier@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "google-map": "GoogleWebComponents/google-map#~1.1.7",
+    "x-tag-core": "~1.5.4",
+    "polymer": "~1.2.3"
+  }
+}

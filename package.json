@@ -1,0 +1,31 @@
+{
+  "name": "WebComponents",
+  "version": "1.0.0",
+  "description": "Presentation on WebComponents",
+  "main": "index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "dependencies": {
+    "bosonic-core-elements": "^1.0.0",
+    "bower": "^1.7.1"
+  },
+  "devDependencies": {
+    "bosonic": "^1.0.0",
+    "bosonic-core-elements": "^1.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Charlynux/WebComponents.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Charlynux/WebComponents/issues"
+  },
+  "homepage": "https://github.com/Charlynux/WebComponents#readme"
+}

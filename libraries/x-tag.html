@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>X-Tag</title>
+  <script src="../bower_components/x-tag-core/dist/x-tag-core.js"></script>
+  <script>
+  xtag.register('x-ample', {
+    lifecycle:{
+      created: function(){
+        console.log('hello, world');
+      }
+    },
+    content : "<style>h3 { color : blue; }</style><h3>hello, world</h3>"
+    });
+  </script>
+</head>
+<body>
+  <x-ample></x-ample>
+</body>
+</html>
