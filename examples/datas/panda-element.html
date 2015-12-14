@@ -56,7 +56,15 @@
       var clone = document.importNode(template, true);
 
       var pandaElement = clone.querySelector('.panda');
+
+      var panda = pandaService.find(pandaId);
+      clone.querySelector('.picture').src = 'datas/' + panda.name + '.png';
+      clone.querySelector('.name').innerHTML = panda.name;
+      clone.querySelector('.weight').innerHTML = panda.weight;
+      this.createShadowRoot().appendChild(clone);
+
       this.addEventListener('click', function() {
+        // this.dispatchEvent(new Event('panda-selected'));
         var currentColor = pandaElement.style.backgroundColor;
         var newColor = '';
         if (currentColor === 'yellow') {
@@ -68,11 +76,6 @@
         pandaElement.style.backgroundColor = newColor;
       });
 
-      var panda = pandaService.find(pandaId);
-      clone.querySelector('.picture').src = 'datas/' + panda.name + '.png';
-      clone.querySelector('.name').innerHTML = panda.name;
-      clone.querySelector('.weight').innerHTML = panda.weight;
-      this.createShadowRoot().appendChild(clone);
     };
 
     document.registerElement('panda-element', { prototype : pandaPrototype });
